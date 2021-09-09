@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Navbar from './Navbar';
-import Form from './Form';
-import Sightings from './Sightings';
+import Navbar from '../Navbar/Navbar';
+import Form from '../Form/Form';
+import Sightings from '../Sightings/Sightings';
 import './App.css';
 
 class App extends Component {
