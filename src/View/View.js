@@ -6,7 +6,9 @@ const View = ({ id, location, description, deleteSighting }) => {
     <section className='view-card'> 
       <h1>{location}</h1>
       <p>{description}</p>
-      <button onClick={() => deleteSighting(id)}>Debunked</button>
+      <button 
+      className='delete'
+      onClick={() => deleteSighting(id)}>Debunked</button>
     </section>
   )
 }

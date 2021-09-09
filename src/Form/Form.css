@@ -19,6 +19,7 @@ input {
   margin: 10px;
 }
 
-button {
+.submit {
   margin-bottom: 10px;
+  
 }

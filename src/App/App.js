@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   deleteSighting = (id) => {
-    deleteData();
+    deleteData(id);
     const sightingsToKeep = this.state.views.filter(idea => idea.id !== id);
     this.setState({ views: sightingsToKeep })
   }

@@ -52,7 +52,9 @@ class Form extends Component {
           onChange={event => this.handleChange(event)}
           />               
         </div>
-        <button onClick={event => this.postSighting(event)}>Submit Experience</button>
+        <button 
+        className='submit'
+        onClick={event => this.postSighting(event)}>Submit Experience</button>
       </form>
     )
   }
