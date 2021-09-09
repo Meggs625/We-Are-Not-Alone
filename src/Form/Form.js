@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { postData } from '../util';
 import './Form.css';
 
 
@@ -20,13 +21,7 @@ class Form extends Component {
     const newSighting = {
       ...this.state
     }
-    fetch('http://localhost:3001/sightings', {
-      method: 'POST',
-      body: JSON.stringify(newSighting),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+    postData(newSighting)
     .then(() => this.props.addSighting(newSighting))
     .catch((error) => console.log(error))
     this.clearInputs();

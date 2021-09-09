@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
 import Form from '../Form/Form';
+import { deleteData, fetchData } from '../util';
 import Sightings from '../Sightings/Sightings';
 import './App.css';
 
@@ -14,8 +15,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/sightings')
-    .then(res => res.json())
+    fetchData()
     .then(data => this.setState({views: data}))
     .catch(err => console.log(err))
   }
@@ -25,12 +25,7 @@ class App extends Component {
   }
 
   deleteSighting = (id) => {
-    fetch(`http://localhost:3001/sightings/${id}`, {
-      method: 'DELETE', 
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
+    deleteData();
     const sightingsToKeep = this.state.views.filter(idea => idea.id !== id);
     this.setState({ views: sightingsToKeep })
   }
